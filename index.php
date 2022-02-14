@@ -4,10 +4,9 @@
 // Stampare di nuovo il paragrafo e la sua lunghezza, dopo aver sostituito con tre asterischi (***) 
 //tutte le occorrenze della parola da censurare.
 
-$testo ='Inserisci la tua password:';
+$testo ='Ciao, benvenuto! Accedi al canale inserendo i tuoi dati: inserisci la tua mail e la tua password.';
 $parolaUtente = $_GET["parola"];
-$parolaCensurata = str_replace($parolaUtente, "***", $parolaUtente);
-
+$parolaCensurata = str_replace($_GET["parola"], "***", $testo);
 ?>
 
 <!DOCTYPE html>
@@ -19,13 +18,13 @@ $parolaCensurata = str_replace($parolaUtente, "***", $parolaUtente);
     <title>Document</title>
 </head>
 <body> 
+    
     <!-- Stampare a schermo il paragrafo e la sua lunghezza. -->
     <?php  echo $testo; ?>
-    
     <!-- calcola la lunghezza della stringa contando da quanti caratteri è composta-->
-    (<?php echo strlen($testo); ?> caratteri) </br> 
+    (testo composto da <?php echo strlen($testo); ?> caratteri) </br> 
 
-    Parola censurata: <?php echo $parolaCensurata; ?>
-    (la parola censurata è <?php echo $_GET["parola"];?>)
+    <?php echo $parolaCensurata; ?>
+     <!--(la parola censurata è <?php echo $_GET["parola"];?>) -->
 </body>
 </html>
