@@ -7,6 +7,9 @@
 $testo ='Ciao, benvenuto! Accedi al canale inserendo i tuoi dati: inserisci la tua mail e la tua password.';
 $parolaUtente = $_GET["parola"];
 $parolaCensurata = str_replace($_GET["parola"], "***", $testo);
+
+$annoCorrente = date("Y");
+$mioAnno = 1996;
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +28,10 @@ $parolaCensurata = str_replace($_GET["parola"], "***", $testo);
     (testo composto da <?php echo strlen($testo); ?> caratteri) </br> 
 
     <?php echo $parolaCensurata; ?>
-     <!--(la parola censurata è <?php echo $_GET["parola"];?>) -->
+    <!-- (la parola censurata è <?php echo $_GET["parola"];?>) --> </br> 
+
+    Copyrigth anno corrente: © <?php echo $annoCorrente; ?> </br> 
+
+    La mia età calcolata in modo dinamico: <?php echo $annoCorrente - $mioAnno ?> 
 </body>
 </html>
