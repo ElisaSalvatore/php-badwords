@@ -5,9 +5,11 @@
 //tutte le occorrenze della parola da censurare.
 
 $testo ='Ciao, benvenuto! Accedi al canale inserendo i tuoi dati: inserisci la tua mail e la tua password.';
-$parolaUtente = $_GET["parola"];
-$parolaCensurata = str_replace($_GET["parola"], "***", $testo);
+$parolaUtente = $_GET["censura"];
+$parolaCensurata = str_replace($parolaUtente, "***", $testo); // $parolaCensurata = str_replace($_GET["censura"], "***", $testo);
+var_dump($parolaUtente);
 
+// BONUS
 $annoCorrente = date("Y");
 $mioAnno = 1996;
 ?>
@@ -18,20 +20,27 @@ $mioAnno = 1996;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Badwords</title>
 </head>
 <body> 
-    
     <!-- Stampare a schermo il paragrafo e la sua lunghezza. -->
-    <?php  echo $testo; ?>
     <!-- calcola la lunghezza della stringa contando da quanti caratteri è composta-->
-    (testo composto da <?php echo strlen($testo); ?> caratteri) </br> 
+    <h1>BADWORDS</h1>
 
-    <?php echo $parolaCensurata; ?>
-    <!-- (la parola censurata è <?php echo $_GET["parola"];?>) --> </br> 
+    <h2>Testo non censurato</h2> 
+    <span> (testo composto da <?php echo strlen($testo); ?> caratteri) </br> </span> 
+    <p> <?php  echo $testo; ?> </p>
+    
+    <h2>Testo censurato</h2>
+    <span> (testo composto da <?php echo strlen($testo); ?> caratteri) </br> </span>
+    <p>  <?php echo $parolaCensurata; ?> </p>
+    <!-- (la parola censurata è <?php echo $_GET["censura"];?>) --> </br> 
 
-    Copyrigth anno corrente: © <?php echo $annoCorrente; ?> </br> 
-
-    La mia età calcolata in modo dinamico: <?php echo $annoCorrente - $mioAnno ?> 
+   <!-- BONUS -->
+   <h3>BONUS</h3>
+   <p>
+       Copyrigth anno corrente: © <?php echo $annoCorrente; ?> </br> 
+       La mia età calcolata in modo dinamico: <?php echo $annoCorrente - $mioAnno ?> 
+   </p>
 </body>
 </html>
